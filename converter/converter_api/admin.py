@@ -7,6 +7,8 @@ from converter_api.models import Converter, ConverterSource
 # Register your models here.
 @admin.register(Converter)
 class Converter(ModelAdmin):
+    '''Configuration to represent Converter model on Admin site'''
+
     list_per_page = 5
     list_display = ['to_currency', 'from_currency', 'created', 'amount']
     list_filter = ['to_currency', 'from_currency', 'created']
@@ -17,6 +19,8 @@ class Converter(ModelAdmin):
 
 @admin.register(ConverterSource)
 class ConverterSource(ModelAdmin):
+    '''Configuration to represent ConverterSource model on Admin site'''
+
     list_per_page = 5
     list_display = ['currencies', 'created']
     list_filter = ['created']
