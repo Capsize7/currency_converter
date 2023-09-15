@@ -1,0 +1,11 @@
+psycopg2
+asgiref
+Django
+pytz
+sqlparse
+Pillow
+celery
+redis
+flower
+djangorestframework
+django-filter
