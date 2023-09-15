@@ -4,6 +4,8 @@ from django.core.validators import MaxValueValidator
 
 # Create your models here.
 class Converter(models.Model):
+    '''Main model of conversion currency`s pair'''
+    
     to_currency = models.CharField(max_length=3, verbose_name='currency to convert')
     from_currency = models.CharField(max_length=3, verbose_name='convert from currency')
     created = models.DateTimeField(auto_now_add=True, verbose_name='created date')
@@ -19,6 +21,8 @@ class Converter(models.Model):
 
 
 class ConverterSource(models.Model):
+    '''Model of source data of currencies rates'''
+    
     currencies = models.JSONField(verbose_name='all available currencies')
     created = models.DateTimeField(auto_now_add=True, verbose_name='created date')
 
