@@ -10,6 +10,8 @@ from converter_api.serializers import ConverterSerializer, ConverterSourceSerial
 
 # Create your views here.
 class ConverterList(generics.ListAPIView):
+    '''A view of all currencies conversion pairs which have been requested. Allowed methods: GET'''
+
     queryset = Converter.objects.all()
     serializer_class = ConverterSerializer
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
@@ -19,6 +21,8 @@ class ConverterList(generics.ListAPIView):
 
 
 class ConverterSourceList(generics.ListAPIView):
+    '''A view of all source data for currencies conversion. Allowed methods: GET'''
+    
     queryset = ConverterSource.objects.all()
     serializer_class = ConverterSourceSerializer
     filter_backends = [SearchFilter, OrderingFilter]
@@ -26,7 +30,12 @@ class ConverterSourceList(generics.ListAPIView):
 
 
 class ConverterAPI(APIView):
+    '''
+    A main view of conversion currencies pairs.
+    This view write a request of conversion into database and return result of it
+    Allowed methods: GET
+    '''
+    
     def get(self, request, to_currency: str, from_currency: str, amount: int):
         converter_source = ConverterSource.objects.first().currencies
-        print(converter_source)
-        return Response({'posts': converter_source})
+        return Response({'currencies': converter_source})
