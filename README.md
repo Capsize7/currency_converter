@@ -4,7 +4,7 @@ This is a simple currencies converter based on Django Rest Framework. It is usin
 
 ## Features
 - Python
-- Django
+- Django Rest Framework
 - PostgreSQL
 - Docker
 - Celery
