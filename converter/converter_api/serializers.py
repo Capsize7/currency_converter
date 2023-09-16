@@ -4,15 +4,15 @@ from converter_api.models import Converter, ConverterSource
 
 
 class ConverterSerializer(ModelSerializer):
-    '''Simple model based serializer for pairs of currencies conversion'''
+    """Simple model based serializer for pairs of currencies conversion"""
     
     class Meta:
         model = Converter
-        fields = ['to_currency', 'from_currency', 'created', 'amount']
+        fields = ['from_currency', 'to_currency', 'created', 'amount', 'result']
 
 
 class ConverterSourceSerializer(ModelSerializer):
-    '''Simple model based serializer for source data of currencies conversion'''
+    """Simple model based serializer for source data of currencies conversion"""
     
     class Meta:
         model = ConverterSource

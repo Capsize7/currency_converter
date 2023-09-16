@@ -9,3 +9,5 @@ redis
 flower
 djangorestframework
 django-filter
+requests
+drf-spectacular

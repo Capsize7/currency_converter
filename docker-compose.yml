@@ -34,7 +34,7 @@ services:
   celery:
     build: .
     command: >
-       sh -c "celery -A converter converter -l info"
+       sh -c "celery -A converter worker -l info"
     volumes:
       - ./converter:/converter
     depends_on:
