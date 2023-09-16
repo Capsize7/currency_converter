@@ -1,6 +1,6 @@
 # DRF Test task about currencies converter
 
-This is a simple currencies converter based on Django Rest Framework. It is using a open service to get correct data of rates and update it every 1 hour via celery beat.
+This is a simple currencies converter based on Django Rest Framework. It is using an open service to get correct data of rates and update it every 1 hour via celery beat.
 
 ## Features
 - Python
